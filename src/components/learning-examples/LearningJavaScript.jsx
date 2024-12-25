@@ -1,3 +1,8 @@
+/**
+ * javascript 객체
+ * 객체의 변수가 하나의 function으로 기능 가능하다
+ * -> printProfile : (파라미터) => {}
+ */
 const person = {
     name: 'Ranga Karanam',
     address: {
@@ -12,7 +17,11 @@ const person = {
         )
     }
 }
-
+/**
+ * 컴포넌트에서 객체를 사용하는 법
+ * {중괄호}로 값 표기 
+ * @returns 
+ */
 export default function LearningJavaScript(){
     return (
         <>
