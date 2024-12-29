@@ -24,7 +24,7 @@
  * 
  * 
  * 
- * @returns 
+ * @returns
  */
 export default function FirstComponent() {
     return (

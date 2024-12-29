@@ -27,7 +27,11 @@ export default function Counter() {
     function resetCounter() {
         setCount(0)
     }
-
+    /**
+     * 상위 컴포넌트(Counter)에서 
+     * 하위 컴포넌트(CounterButton)로 props 전달
+     * by, incrementMethod, decreaseMethod
+     */
     return (
         <>
             <span className="totalCount">{count}</span>
