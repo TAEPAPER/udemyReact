@@ -13,7 +13,11 @@ function LoginComponent() {
     const navigate = useNavigate()
 
     const authContext = useAuth()
-
+   /**
+    * onChange 이벤트
+    * react state와 dom의 동기화
+    * @param {*} event 
+    */
     function handleUsernameChange(event) {
         setUsername(event.target.value)
     }
