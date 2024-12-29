@@ -25,7 +25,10 @@ function LoginComponent() {
     function handlePasswordChange(event) {
         setPassword(event.target.value)
     }
-
+    /**
+     * 인증 실패 시 showErrorMessage false로 set
+     * -> errorMessage 노출 
+     */
     async function handleSubmit() {
         if(await authContext.login(username, password)){
             navigate(`/welcome/${username}`)
