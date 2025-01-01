@@ -1,4 +1,5 @@
 import { useState } from 'react'
+/** useNavigate : 다른 페이지를 탐색할 수 있는 hook 중에 하나 (라우터) */
 import {useNavigate} from 'react-router-dom'
 import { useAuth } from './security/AuthContext'
 
@@ -9,7 +10,7 @@ function LoginComponent() {
     const [password, setPassword] = useState('')
 
     const [showErrorMessage, setShowErrorMessage] = useState(false)
-
+    
     const navigate = useNavigate()
 
     const authContext = useAuth()
@@ -31,6 +32,10 @@ function LoginComponent() {
      */
     async function handleSubmit() {
         if(await authContext.login(username, password)){
+            /** 
+             * navagate hook
+             * -> path로 redirect
+             */
             navigate(`/welcome/${username}`)
         } else {
             setShowErrorMessage(true)

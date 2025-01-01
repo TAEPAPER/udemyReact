@@ -1,11 +1,19 @@
+/** useParams 
+ * -> Returns an object of key/value pairs of the dynamic params 
+ * from the current URL  
+ * TodoApp.jsx 의 <Route path='/welcome/:username'
+ * -> WelcomComponent에 username 넘겨줌 (java의 @Pathvariable)
+ */
 import {useParams, Link} from 'react-router-dom'
 import { useState } from 'react'
 import { retrieveHelloWorldPathVariable } from './api/HelloWorldApiService'
 import { useAuth } from './security/AuthContext'
 
 function WelcomeComponent() {
-
-    const {username } = useParams()
+    /** useParams hook 사용
+     *  {중괄호} : 객체를 직접 받음 (params.username 대신 )
+     */
+    const {username} = useParams()
 
     const authContext = useAuth()
 
