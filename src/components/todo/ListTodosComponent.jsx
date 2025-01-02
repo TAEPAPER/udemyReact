@@ -76,6 +76,12 @@ function ListTodosComponent() {
                             </tr>
                     </thead>
                     <tbody>
+                    
+                    {/*
+                        todos.map( todo => 사용) todo.id, todo.description, todo.done )
+                        -> 
+                    */}
+
                     {
                         todos.map(
                             todo => (
