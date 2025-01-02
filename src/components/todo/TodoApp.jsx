@@ -24,11 +24,15 @@ export default function TodoApp() {
         <div className="TodoApp">
             <AuthProvider>
                 <BrowserRouter>
+                    {/** 
+                     * 공통 컴포넌트 
+                     * -> 어떤 컴포넌트로 이동하더라도 
+                     * Header, Footer가 화면에 노출 
+                     */}
                     <HeaderComponent />
                     <Routes>
                         <Route path='/' element={ <LoginComponent /> } />
-                        <Route path='/login' element={ <LoginComponent /> } />
-                        
+                        <Route path='/login' element={ <LoginComponent /> } />               
                         <Route path='/welcome/:username' element={
                             <AuthenticatedRoute>
                                 <WelcomeComponent />
