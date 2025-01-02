@@ -6,6 +6,7 @@ import ErrorComponent from './ErrorComponent'
 import WelcomeComponent from './WelcomeComponent'
 import LoginComponent from './LoginComponent'
 import TodoComponent from './TodoComponent'
+/** AuthContext import해서 씀 */
 import AuthProvider, { useAuth } from './security/AuthContext'
 
 import './TodoApp.css'
@@ -22,6 +23,12 @@ function AuthenticatedRoute({children}) {
 export default function TodoApp() {
     return (
         <div className="TodoApp">
+            {/**
+             * <AuthProvider> 로 감쌈
+             * -> AuthContext.js 의 function AuthProvider({ children }) {...}
+             *    에서 감싸진 컴포넌트들이 children임
+             * -> AuthProvider가 children들에게 context 제공 
+             */}
             <AuthProvider>
                 <BrowserRouter>
                     {/** 

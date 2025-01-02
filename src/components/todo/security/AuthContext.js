@@ -2,11 +2,21 @@ import { createContext, useContext, useState } from "react";
 import { apiClient } from "../api/ApiClient";
 import { executeJwtAuthenticationService } from "../api/AuthenticationApiService";
 
+/**
+ * createContext : context 생성
+ * -> 컴포넌트간 공유할 context 생성
+ * -> export const AuthContext : context export
+ * -> 다른 컴포넌트에서 import에서(useContext) 씀
+ */
 //1: Create a Context
 export const AuthContext = createContext()
 
 export const useAuth = () => useContext(AuthContext)
-
+/**
+ * AuthProvider 
+ * -> 다른 컴포넌트에 context를 제공
+ * -> return jsx
+ */
 //2: Share the created context with other components
 export default function AuthProvider({ children }) {
 
@@ -101,7 +111,9 @@ export default function AuthProvider({ children }) {
         setToken(null)
         setUsername(null)
     }
-
+    {/**
+        isAuthenticated를 다른 컨포넌트에 제공 
+    */}
     return (
         <AuthContext.Provider value={ {isAuthenticated, login, logout, username, token}  }>
             {children}
