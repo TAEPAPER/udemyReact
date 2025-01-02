@@ -44,6 +44,11 @@ function WelcomeComponent() {
         <div className="WelcomeComponent">
             <h1>Welcome {username}</h1>
             <div>
+                {/* 
+                    Link to
+                    -> 변경하고싶은 컴포넌트만 변경하게 해준다 
+                    -> 전체 페이지 다시 로드 방지 
+                */}
                 Manage your todos - <Link to="/todos">Go here</Link>
             </div>
             <div>
