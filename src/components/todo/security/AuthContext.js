@@ -6,11 +6,13 @@ import { executeJwtAuthenticationService } from "../api/AuthenticationApiService
  * createContext : context 생성
  * -> 컴포넌트간 공유할 context 생성
  * -> export const AuthContext : context export
- * -> 다른 컴포넌트에서 import에서(useContext) 씀
  */
 //1: Create a Context
 export const AuthContext = createContext()
-
+/**
+ * useAuth 
+ * -> hook을 만들어서 AuthContext값에 쉽게 접근할 수 있도록 함
+ */
 export const useAuth = () => useContext(AuthContext)
 /**
  * AuthProvider 

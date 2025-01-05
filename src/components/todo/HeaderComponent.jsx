@@ -20,6 +20,7 @@ function HeaderComponent() {
                         <div className="collapse navbar-collapse">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
+                                    {/** context에 담긴 isAuthenticated(true/false)를 활용  */}
                                     {isAuthenticated 
                                         && <Link className="nav-link" to="/welcome/in28minutes">Home</Link>}
                                     

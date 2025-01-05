@@ -12,7 +12,7 @@ function LoginComponent() {
     const [showErrorMessage, setShowErrorMessage] = useState(false)
     
     const navigate = useNavigate()
-
+    //AuthContext에서 생성한 useAuth() 훅 사용 
     const authContext = useAuth()
    /**
     * onChange 이벤트
@@ -31,6 +31,7 @@ function LoginComponent() {
      * -> errorMessage 노출 
      */
     async function handleSubmit() {
+        {/** 인증관련 로직은 전부 authContext에 위임 */}
         if(await authContext.login(username, password)){
             /** 
              * navagate hook
