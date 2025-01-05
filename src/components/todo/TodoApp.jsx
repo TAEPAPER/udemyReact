@@ -11,12 +11,20 @@ import AuthProvider, { useAuth } from './security/AuthContext'
 
 import './TodoApp.css'
 
+/**
+ * 사용자가 로그인 했을 때만 접근 가능하게 함
+ * @param {children} param
+ * <AuthenticatedRoute>
+    <WelcomeComponent />
+  </AuthenticatedRoute> 
+  -> children은 <WelcomeComponent/> 이다.
+ */
 function AuthenticatedRoute({children}) {
     const authContext = useAuth()
     
     if(authContext.isAuthenticated)
         return children
-
+    // /로 redirect 시킴 
     return <Navigate to="/" />
 }
 
